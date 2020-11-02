@@ -126,7 +126,7 @@ class DotsIndicator @JvmOverloads constructor(context: Context, attrs: Attribute
 
             nextDotBackground.setColor(nextColor)
 
-            if (progressMode && selectedPosition <= pager!!.currentItem) {
+            if (progressMode && selectedPosition == pager!!.currentItem) {
               selectedDotBackground.setColor(selectedDotColor)
             } else {
               selectedDotBackground.setColor(selectedColor)
@@ -151,7 +151,7 @@ class DotsIndicator @JvmOverloads constructor(context: Context, attrs: Attribute
     val elevationItem = dots[index]
     val background = elevationItem.background as DotsGradientDrawable
 
-    if (index == pager!!.currentItem || progressMode && index < pager!!.currentItem) {
+    if (index == pager!!.currentItem || progressMode && index == pager!!.currentItem) {
       background.setColor(selectedDotColor)
     } else {
       background.setColor(dotsColor)
